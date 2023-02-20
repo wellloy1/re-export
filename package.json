@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "re-exp",
   "author": "Max Shane <wellloy1@gmail.com>",
   "description": "Adds an index.js file to a directory and re-exports variables from modules in it.",
