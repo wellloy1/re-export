@@ -1,0 +1,10 @@
+{
+  "name": "re-export",
+  "author": "Max Shane <wellloy1@gmail.com>",
+  "description": "Adds an index.js file to a directory and re-exports variables from modules in it.",
+  "type": "module",
+  "scripts": {
+    "demo": "node ./example/index.js"
+  },
+  "bin": "./command.js"
+}
