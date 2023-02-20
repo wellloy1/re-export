@@ -1,13 +1,15 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.4",
   "name": "re-exp",
   "author": "Max Shane <wellloy1@gmail.com>",
   "description": "Adds an index.js file to a directory and re-exports variables from modules in it.",
   "type": "module",
   "scripts": {
     "demo": "node ./example/index.js",
-    "postinstall": "chmod +x ./command.js"
+    "postinstall": "if [[ ! $(npm ls | grep re-exp) ]]; then npm install re-exp; fi",
+    "re-exp": "node ./command.js"
   },
+  "dependencies": {},
   "bin": {
     "re-exp": "./command.js"
   }

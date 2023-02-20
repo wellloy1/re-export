@@ -2,9 +2,7 @@
 import process from "node:process";
 import { reExport } from "./re-export.js";
 
-const args = process.argv;
-args.shift();
-args.shift();
+const args = process.argv.slice(2);
 
 const options = {
   "-d": undefined,
