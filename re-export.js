@@ -1,11 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export async function reExport({ dir, ext = "js", quiet }) {
-  const dirPath = path.join(__dirname, dir);
+  const dirPath = path.join(process.cwd(), dir);
   // читаем все файлы в директории
   const files = await fs.promises.readdir(dirPath);
 
@@ -18,7 +15,6 @@ export async function reExport({ dir, ext = "js", quiet }) {
     if (stats.isFile() && path.extname(file) === `.${ext}`) {
       const moduleExports = await import(filePath);
       exports[path.parse(file).name] = moduleExports;
-      if (!quiet) console.log(`✓ ${dir}/${file}`);
     }
   }
 
